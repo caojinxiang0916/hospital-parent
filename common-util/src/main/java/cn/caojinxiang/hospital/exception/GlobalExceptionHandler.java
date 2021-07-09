@@ -1,6 +1,6 @@
 package cn.caojinxiang.hospital.exception;
 
-import cn.caojinxiang.hospital.result.Result;
+import cn.caojinxiang.hospital.result.ApiResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public Result error(Exception e) {
+    public ApiResult error(Exception e) {
         e.printStackTrace();
-        return Result.fail();
+        return ApiResult.fail();
     }
 
     @ExceptionHandler(YyghException.class)
     @ResponseBody
-    public Result error(YyghException e) {
+    public ApiResult error(YyghException e) {
         e.printStackTrace();
-        return Result.fail();
+        return ApiResult.fail();
     }
 }
